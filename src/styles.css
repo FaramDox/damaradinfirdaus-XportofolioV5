@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-lime: #a3e635;
+  --color-brand-lime-hover: #bef264;
+  --color-brand-dark: #0d0d0d;
+  --color-brand-card: #141414;
+  --color-brand-border: #1f242c;
+  --color-brand-dim: #6b7280;
+
+  --font-family-sans: 'Inter', sans-serif;
+  --font-family-mono: 'Fira Code', monospace;
+  --font-family-display: 'Space Grotesk', sans-serif;
+  --font-family-tech: 'Chakra Petch', sans-serif;
+  --font-family-code: 'JetBrains Mono', monospace;
+  --font-family-syne: 'Syne', sans-serif;
+
+  --shadow-glow-lime: 0 0 25px -5px rgba(163, 230, 53, 0.35);
+  --shadow-glow-subtle: 0 0 40px -10px rgba(163, 230, 53, 0.15);
+}
+
+.tech-grid-bg {
+  background-image: radial-gradient(rgba(163, 230, 53, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+html.light .tech-grid-bg {
+  background-image: radial-gradient(rgba(101, 163, 13, 0.12) 1px, transparent 1px);
+}
+
+.cyber-globe-glow {
+  background: radial-gradient(circle at 60% 50%, rgba(163, 230, 53, 0.18) 0%, rgba(34, 197, 94, 0.05) 45%, transparent 70%);
+}
+
+html.light .cyber-globe-glow {
+  background: radial-gradient(circle at 60% 50%, rgba(132, 204, 22, 0.12) 0%, rgba(34, 197, 94, 0.04) 45%, transparent 70%);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3e635;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #84cc16;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(163, 230, 53, 0.06), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(34, 197, 94, 0.06), transparent 28%),
+    #0d0d0d;
+  color: #d4d4d8;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.light body {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(132, 204, 22, 0.07), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(34, 197, 94, 0.07), transparent 28%),
+    #f8fafc;
+  color: #334155;
+}
+
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, box-shadow 0.3s ease !important;
+}
+
+.font-hero-name {
+  font-family: 'Chakra Petch', 'Space Grotesk', sans-serif;
+  letter-spacing: -0.015em;
+}
+
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  opacity: 0;
+  background: linear-gradient(120deg, transparent, rgba(163, 230, 53, 0.18), transparent);
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+  animation: shine 1.2s ease;
+}
+
+.scanline {
+  position: relative;
+}
+
+.scanline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(163, 230, 53, 0.08), transparent);
+  animation: scanline 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes scanline {
+  to {
+    top: 100%;
+  }
+}
+
+/* GPU-accelerated CSS keyframes for AnimatedBackground (zero JS overhead) */
+@keyframes float-dot {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate3d(0, -26px, 0) scale(1.4);
+    opacity: 0.65;
+  }
+}
+
+@keyframes ambient-1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(45px, 30px, 0);
+  }
+}
+
+@keyframes ambient-2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-50px, 40px, 0);
+  }
+}
+
+.animate-ambient-1 {
+  animation: ambient-1 14s ease-in-out infinite;
+}
+
+.animate-ambient-2 {
+  animation: ambient-2 16s ease-in-out infinite;
+}
+
+/* Render optimization: defer layout/paint of offscreen sections until near viewport */
+section:not(#home) {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+/* Mobile tap & touch optimization */
+@media (hover: hover) {
+  .glow-card:hover::before {
+    opacity: 1;
+    animation: shine 1.2s ease;
+  }
+}
+
+/* Prevent layout thrashing on touch */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
