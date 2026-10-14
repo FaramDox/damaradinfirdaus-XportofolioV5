@@ -8,7 +8,7 @@ const certs = [
     desc: 'Penguasaan konsep dasar analisis data, ekosistem big data modern, pengolahan informasi, dan pemanfaatan data untuk pengambilan keputusan strategis.',
     issuer: 'IBM SkillsBuild',
     date: '28 September 2026',
-    image: '/sertifikat/Sertifikat Started With Data.png',
+    image: './sertifikat/Sertifikat Started With Data.png',
     badge: 'IBM SKILLSBUILD',
     verifyUrl: 'https://www.credly.com/badges/6367a41f-2961-4f17-bde5-1538bef18c94',
   },
@@ -19,7 +19,7 @@ const certs = [
     issuer: 'Kementerian Investasi dan Hilirisasi / BKPM',
     credentialId: '8051/MOOC/KEMINVESHIL-BKPM/2026',
     date: '16 September 2026',
-    image: '/sertifikat/sertifikat pelatihan ui ux.png',
+    image: './sertifikat/sertifikat pelatihan ui ux.png',
     badge: 'KEMINVESHIL / BKPM',
   },
   {
@@ -28,7 +28,7 @@ const certs = [
     desc: 'Pengembangan arsitektur backend MVC modern, integrasi database, REST API, sistem autentikasi, dan routing aplikasi berbasis framework Laravel 9.',
     issuer: 'Coding Studio Flexy',
     date: '06 Oktober 2026',
-    image: '/sertifikat/sertifikat mahir membuat website dengan laravel 9.png',
+    image: './sertifikat/sertifikat mahir membuat website dengan laravel 9.png',
     badge: 'CODING STUDIO',
   },
   {
@@ -37,7 +37,7 @@ const certs = [
     desc: 'Penguasaan struktur antarmuka web interaktif, responsive design lintas perangkat, DOM manipulation, dan integrasi UI modern.',
     issuer: 'Coding Studio Flexy',
     date: '03 Desember 2025',
-    image: '/sertifikat/sertifikat frontend web development.jpeg',
+    image: './sertifikat/sertifikat frontend web development.jpeg',
     badge: 'CODING STUDIO',
   },
   {
@@ -46,7 +46,7 @@ const certs = [
     desc: 'Perancangan basis data relasional, normalisasi tabel, indexing performa, dan penguasaan sintaks query SQL (DDL & DML).',
     issuer: 'Coding Studio Flexy',
     date: '01 September 2026',
-    image: '/sertifikat/sertifikat fundamental database mysql.png',
+    image: './sertifikat/sertifikat fundamental database mysql.png',
     badge: 'CODING STUDIO',
   },
   {
@@ -55,7 +55,7 @@ const certs = [
     desc: 'Pondasi logika algoritma pemrograman komputasional, alur instruksi terstruktur, dan efisiensi problem solving perangkat lunak.',
     issuer: 'Coding Studio Flexy',
     date: '17 Juli 2025',
-    image: '/sertifikat/sertifikat fundamental agoritma.jpeg',
+    image: './sertifikat/sertifikat fundamental agoritma.jpeg',
     badge: 'CODING STUDIO',
   },
   {
@@ -64,7 +64,7 @@ const certs = [
     desc: 'Dasar konsep keamanan sistem siber, analisis ancaman digital, proteksi kerahasiaan informasi, dan mitigasi vulnerability.',
     issuer: 'Coding Studio',
     date: '31 Juli 2025',
-    image: '/sertifikat/sertifikat class cyber security.jpeg',
+    image: './sertifikat/sertifikat class cyber security.jpeg',
     badge: 'CODING STUDIO',
   },
 ];

@@ -20,7 +20,7 @@ export default function AboutSection() {
                   decoding="async"
                   height="448"
                   loading="lazy"
-                  src="/damarganz.jpeg"
+                  src="./damarganz.jpeg"
                   width="448"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>

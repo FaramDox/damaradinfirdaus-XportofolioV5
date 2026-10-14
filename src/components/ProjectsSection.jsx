@@ -65,7 +65,7 @@ const projects = [
     desc: 'Platform media belajar koding dan blog teknologi interaktif untuk berbagi tutorial pemrograman dasar serta tips software engineering.',
     tags: ['C#', 'C++', 'GDScript'],
     link: 'https://hitastudio.github.io/Think-and-Code/',
-    image: '/ssthinkandcode.png',
+    image: './ssthinkandcode.png',
   },
   {
     url: 'hitastudio.github.io/Pasir-Biru',
@@ -73,7 +73,7 @@ const projects = [
     desc: 'Portal sistem informasi desa terpadu untuk transparansi publik, publikasi berita/kegiatan warga, dan layanan administrasi surat online.',
     tags: ['PHP', 'Laravel', 'MySQL', 'Tailwind CSS', 'JavaScript'],
     link: 'https://hitastudio.github.io/Pasir-Biru/',
-    image: '/sswebdesa.png',
+    image: './sswebdesa.png',
   },
   {
     url: 'faramdox.github.io/Portofolio-PerusahaanTeknologi-V1',
@@ -81,7 +81,7 @@ const projects = [
     desc: 'Website profil perusahaan profesional untuk menampilkan identitas bisnis, katalog layanan, portofolio proyek, dan formulir kontak klien.',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'Bootstrap'],
     link: 'https://faramdox.github.io/Portofolio-PerusahaanTeknologi-V1/',
-    image: '/sswebperusahaan.png',
+    image: './sswebperusahaan.png',
   },
 ];
 
