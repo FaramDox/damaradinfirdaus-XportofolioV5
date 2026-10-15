@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://faramdox.github.io/sitemap.xml

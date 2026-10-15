@@ -169,8 +169,8 @@ export default function HeroSection() {
             </motion.a>
             <motion.a
               className="px-6 py-3.5 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 hover:border-lime-500 dark:hover:border-lime-400 text-zinc-900 dark:text-white font-medium text-sm rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm cursor-pointer"
-              download="CV Damar Adin Firdaus.pdf"
-              href="./CV Damar Adin Firdaus_New.pdf"
+              download="cv-damar-adin-firdaus.pdf"
+              href="./cv-damar-adin-firdaus.pdf"
               rel="noopener noreferrer"
               target="_blank"
               whileHover={{ scale: 1.05 }}
