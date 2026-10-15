@@ -1,6 +1,12 @@
 # Damar Adin Firdaus — Software Engineer Portfolio V5
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/placeholder/deploy-status)](https://portofolio-damaradinfirdaus.netlify.app/)
+
 Portofolio resmi versi 5 milik **Damar Adin Firdaus**, seorang *Software Engineer* dan *Full-Stack Developer*. Proyek ini menampilkan keahlian dalam pengembangan aplikasi web performa tinggi, arsitektur database, dan desain antarmuka modern.
+
+## 🌐 Demo
+
+**Live Preview**: [https://portofolio-damaradinfirdaus.netlify.app/](https://portofolio-damaradinfirdaus.netlify.app/)
 
 ## 🚀 Fitur Utama
 
@@ -16,7 +22,7 @@ Portofolio resmi versi 5 milik **Damar Adin Firdaus**, seorang *Software Enginee
 - **Build Tool**: [Vite](https://vitejs.dev/)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Deployment**: Direkomendasikan via GitHub Pages atau Vercel.
+- **Deployment**: [Netlify](https://www.netlify.com/)
 
 ## 📂 Struktur Proyek
 
@@ -51,7 +57,7 @@ Portofolio resmi versi 5 milik **Damar Adin Firdaus**, seorang *Software Enginee
 
 ## 👤 Kontak
 
-- **Email**: damaradinfirdaus@gmail.com
+- **Email**: mradinfirdaus@gmail.com
 - **LinkedIn**: [damaradinfirdaus](https://www.linkedin.com/in/damaradinfirdaus)
 - **GitHub**: [FaramDox](https://github.com/FaramDox)
 
