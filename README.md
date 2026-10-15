@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/placeholder/deploy-status)](https://portofolio-damaradinfirdaus.netlify.app/)
 
-Portofolio resmi versi 5 milik **Damar Adin Firdaus**, seorang *Software Engineer* dan *Full-Stack Developer*. Proyek ini menampilkan keahlian dalam pengembangan aplikasi web performa tinggi, arsitektur database, dan desain antarmuka modern.
+Portofolio resmi versi 5 milik **Damar Adin Firdaus**, seorang *Software Engineer* dan *Full-Stack Web Developer*. Proyek ini menampilkan keahlian dalam pengembangan aplikasi web performa tinggi, arsitektur database, dan desain antarmuka modern.
 
 ## 🌐 Demo
 
@@ -26,10 +26,47 @@ Portofolio resmi versi 5 milik **Damar Adin Firdaus**, seorang *Software Enginee
 
 ## 📂 Struktur Proyek
 
-- `src/components/`: Komponen UI modular (Hero, Projects, Skills, dll).
-- `src/context/`: Manajemen state untuk tema (Light/Dark).
-- `src/styles.css`: Konfigurasi global Tailwind CSS.
-- `public/`: Aset statis seperti gambar profil, favicon, dan dokumen CV.
+```text
+src/
+├── main.jsx              # Entry point — mount App ke DOM
+├── App.jsx               # Root component — susun semua section
+├── styles.css            # Global styles & konfigurasi Tailwind CSS
+├── components/           # Komponen UI modular
+│   ├── Header.jsx        # Navbar & navigasi
+│   ├── HeroSection.jsx   # Intro + typewriter effect
+│   ├── AboutSection.jsx  # Profil & deskripsi diri
+│   ├── SkillsSection.jsx # Daftar teknologi & keahlian
+│   ├── ExperienceSection.jsx   # Riwayat pengalaman kerja
+│   ├── ProjectsSection.jsx     # Showcase proyek unggulan
+│   ├── CertificatesSection.jsx # Sertifikasi & penghargaan
+│   ├── TestimonialsSection.jsx # Testimoni / rekomendasi
+│   ├── ContactSection.jsx      # Form & info kontak
+│   ├── Footer.jsx              # Footer halaman
+│   ├── AnimatedBackground.jsx  # Efek latar animasi
+│   ├── LeftSocialRail.jsx      # Panel sosial media kiri
+│   └── ThemeToggle.jsx         # Tombol toggle Dark/Light mode
+└── context/
+    └── ThemeContext.jsx  # State management tema global
+```
+
+**Alur render:**
+
+```text
+main.jsx
+  └── App.jsx
+        ├── ThemeContext (Provider)
+        ├── AnimatedBackground
+        ├── Header + ThemeToggle + LeftSocialRail
+        ├── HeroSection
+        ├── AboutSection
+        ├── SkillsSection
+        ├── ExperienceSection
+        ├── ProjectsSection
+        ├── CertificatesSection
+        ├── TestimonialsSection
+        ├── ContactSection
+        └── Footer
+```
 
 ## 💻 Cara Menjalankan Secara Lokal
 
