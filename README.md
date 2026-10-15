@@ -34,30 +34,35 @@ Portofolio resmi versi 5 milik **Damar Adin Firdaus**, seorang *Software Enginee
 ## 💻 Cara Menjalankan Secara Lokal
 
 1. **Clone repository**:
+
    ```bash
    git clone https://github.com/FaramDox/damaradinfirdaus-XportofolioV5.git
    cd damaradinfirdaus-XportofolioV5
    ```
 
 2. **Install dependensi**:
+
    ```bash
    npm install
    ```
 
 3. **Jalankan server pengembangan**:
+
    ```bash
    npm run dev
    ```
+
    Buka `http://localhost:5173` di browser Anda.
 
 4. **Build untuk produksi**:
+
    ```bash
    npm run build
    ```
 
 ## 👤 Kontak
 
-- **Email**: mradinfirdaus@gmail.com
+- **Email**: [mradinfirdaus@gmail.com](mailto:mradinfirdaus@gmail.com)
 - **LinkedIn**: [damaradinfirdaus](https://www.linkedin.com/in/damaradinfirdaus)
 - **GitHub**: [FaramDox](https://github.com/FaramDox)
 
