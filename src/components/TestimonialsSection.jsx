@@ -66,14 +66,14 @@ function Avatar({ src, name, size = 10 }) {
     return (
       <img
         alt={name}
-        className={`w-${size} h-${size} rounded-full object-cover border border-zinc-300 dark:border-zinc-700 shrink-0`}
+        className="w-10 h-10 rounded-full object-cover border border-zinc-300 dark:border-zinc-700 shrink-0"
         src={src}
         onError={() => setErr(true)}
       />
     );
   }
   return (
-    <div className={`w-${size} h-${size} rounded-full bg-lime-500/20 border border-lime-500/30 flex items-center justify-center shrink-0`}>
+    <div className="w-10 h-10 rounded-full bg-lime-500/20 border border-lime-500/30 flex items-center justify-center shrink-0">
       <span className="text-lime-400 font-bold text-xs">{getInitials(name)}</span>
     </div>
   );
@@ -184,15 +184,21 @@ export default function TestimonialsSection() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const submittedTimerRef = useRef(null);
 
   useEffect(() => {
     supabase
       .from('testimonials')
       .select('*')
       .order('created_at', { ascending: true })
-      .then(({ data }) => {
+      .then(({ data, error }) => {
+        if (error) { console.error('Testimonials fetch error:', error.message); return; }
         if (data) setUserTestimonials(data.map(r => ({ ...r, avatar: null })));
       });
+  }, []);
+
+  useEffect(() => {
+    return () => clearTimeout(submittedTimerRef.current);
   }, []);
 
   const allTestimonials = [...defaultTestimonials, ...userTestimonials];
@@ -212,12 +218,19 @@ export default function TestimonialsSection() {
     if (Object.keys(errs).length) { setErrors(errs); return; }
 
     setLoading(true);
-    const { data, error } = await supabase.from('testimonials').insert({
-      name: form.name.trim(),
-      role: form.role.trim(),
-      quote: form.quote.trim(),
-      rating: form.rating,
-    }).select().single();
+    let data, error;
+    try {
+      ({ data, error } = await supabase.from('testimonials').insert({
+        name: form.name.trim(),
+        role: form.role.trim(),
+        quote: form.quote.trim(),
+        rating: form.rating,
+      }).select().single());
+    } catch (err) {
+      setErrors({ quote: 'Gagal menyimpan, coba lagi.' });
+      setLoading(false);
+      return;
+    }
     setLoading(false);
 
     if (error) { setErrors({ quote: 'Gagal menyimpan, coba lagi.' }); return; }
@@ -227,7 +240,8 @@ export default function TestimonialsSection() {
     setErrors({});
     setShowForm(false);
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    clearTimeout(submittedTimerRef.current);
+    submittedTimerRef.current = setTimeout(() => setSubmitted(false), 4000);
   }
 
   function handleChange(field, value) {
