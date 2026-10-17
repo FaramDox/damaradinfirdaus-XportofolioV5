@@ -6,6 +6,7 @@
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
+    "@emailjs/browser": "^5.0.3",
     "@tailwindcss/postcss": "^4.3.3",
     "@vitejs/plugin-react": "latest",
     "autoprefixer": "latest",

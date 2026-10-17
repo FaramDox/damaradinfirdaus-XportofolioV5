@@ -1,13 +1,28 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+
+const EMAILJS_SERVICE_ID  = 'service_tae164k';
+const EMAILJS_TEMPLATE_ID = 'template_iiqvgij';
+const EMAILJS_PUBLIC_KEY  = '4GKyZFEXfCg7laCeK';
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', projectType: '', message: '' });
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
   const handleChange = (e) => setForm({ ...form, [e.target.id]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handle submit
+    setStatus('sending');
+    emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      { from_name: form.name, from_email: form.email, project_type: form.projectType, message: form.message },
+      EMAILJS_PUBLIC_KEY
+    ).then(() => {
+      setStatus('success');
+      setForm({ name: '', email: '', projectType: '', message: '' });
+    }).catch(() => setStatus('error'));
   };
 
   return (
@@ -113,12 +128,19 @@ export default function ContactSection() {
                   onChange={handleChange}
                 />
               </div>
+              {status === 'success' && (
+                <p className="text-lime-500 text-sm font-mono text-center">✓ Pesan terkirim! Saya akan segera membalas.</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400 text-sm font-mono text-center">✗ Gagal mengirim. Coba lagi atau email langsung.</p>
+              )}
               <button
-                className="w-full py-4 bg-lime-400 hover:bg-lime-300 text-black font-semibold text-sm rounded-lg transition-all duration-200 flex items-center justify-center gap-2 shadow-glow-lime cursor-pointer font-mono"
+                className="w-full py-4 bg-lime-400 hover:bg-lime-300 disabled:opacity-60 disabled:cursor-not-allowed text-black font-semibold text-sm rounded-lg transition-all duration-200 flex items-center justify-center gap-2 shadow-glow-lime cursor-pointer font-mono"
                 type="submit"
+                disabled={status === 'sending'}
               >
-                <span>SEND MESSAGE</span>
-                <span>→</span>
+                <span>{status === 'sending' ? 'SENDING...' : 'SEND MESSAGE'}</span>
+                {status !== 'sending' && <span>→</span>}
               </button>
             </form>
           </div>
