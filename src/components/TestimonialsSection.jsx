@@ -5,7 +5,7 @@ const defaultTestimonials = [
     id: 'default-1',
     quote:
       'Damar memiliki pemahaman arsitektur perangkat lunak yang sangat kuat. Kode yang ditulis sangat rapi, terstruktur, dan eksekusi sistem klinik berjalan tanpa hambatan.',
-    name: 'Dr. Hendra Saputra',
+    name: 'dr. Annisa, M.Kes',
     role: 'Koordinator Sistem, Klinik Polinela',
     avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuASeWbiMy1Z1k-UMhxxMPH6Sit8BDOCh9eNi0r3P7BYUm-8fDgPWsvs2NNcF-Px1Umj-wxtf0qAvKiJ4dT4EIjtqdyuvA4USN6DbmQ13CPzTrPhz6QAQZ8ArPKD_zf0QclO7VIXChTXhR0hnR0hjXAfOtVt0xrKccel5krUy4Xfb0C9c_QFqrut9mvvDoWf41jqesuJWjG4g0nalu-RzP-TfQ_XsGrlVW2OCDWmJ1e-WajGcpnVIJ0',
   },
@@ -21,8 +21,8 @@ const defaultTestimonials = [
     id: 'default-3',
     quote:
       'Kerja sama dengan Damar dalam proyek pengembangan sistem selalu efektif. Dia komunikatif, detail terhadap perancangan database, dan cepat tanggap dalam iterasi fitur.',
-    name: 'Aulia Prasetyo',
-    role: 'Lead Researcher, PhysiAble Project',
+    name: 'Aulia Putri',
+    role: 'Lead Researcher, Klinik Polinela Project',
     avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBye8bU8OkCstpyoJ5YHU2bmvOjF0YEpn61mb6GwlBgGzUQCJ2GH5YktcEE8Gz1LCLK4XD3q1MPJOjQYMheSbf48QRjNCZc-7kn4N8_fRdzaPNxflzHzSNONlHvQ9AqHnTkr5O7engfKWbf-aMjV3_TnarAVrPd4-9NMF1bbrszFQPcIvsULhLv6e_83pyMRbtoinNmvhGVVT_ALWUsMwP6c2IM2tq_LiWliRLRKvlJoHRChTsEvew',
   },
 ];
