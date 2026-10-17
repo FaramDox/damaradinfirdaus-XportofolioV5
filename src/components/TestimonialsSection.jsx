@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { supabase } from '../lib/supabase.js';
 
 const defaultTestimonials = [
   {
@@ -27,7 +28,7 @@ const defaultTestimonials = [
   },
 ];
 
-const STORAGE_KEY = 'portfolio-testimonials';
+
 
 /* ─── Star Rating ─────────────────────────────────────────── */
 function StarRating({ value, onChange }) {
@@ -182,12 +183,16 @@ export default function TestimonialsSection() {
   const [form, setForm] = useState(emptyForm);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) setUserTestimonials(JSON.parse(stored));
-    } catch {}
+    supabase
+      .from('testimonials')
+      .select('*')
+      .order('created_at', { ascending: true })
+      .then(({ data }) => {
+        if (data) setUserTestimonials(data.map(r => ({ ...r, avatar: null })));
+      });
   }, []);
 
   const allTestimonials = [...defaultTestimonials, ...userTestimonials];
@@ -201,24 +206,23 @@ export default function TestimonialsSection() {
     return e;
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
 
-    const newEntry = {
-      id: `user-${Date.now()}`,
+    setLoading(true);
+    const { data, error } = await supabase.from('testimonials').insert({
       name: form.name.trim(),
       role: form.role.trim(),
       quote: form.quote.trim(),
       rating: form.rating,
-      avatar: null,
-    };
+    }).select().single();
+    setLoading(false);
 
-    const updated = [...userTestimonials, newEntry];
-    setUserTestimonials(updated);
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(updated)); } catch {}
+    if (error) { setErrors({ quote: 'Gagal menyimpan, coba lagi.' }); return; }
 
+    setUserTestimonials(prev => [...prev, { ...data, avatar: null }]);
     setForm(emptyForm);
     setErrors({});
     setShowForm(false);
@@ -345,9 +349,10 @@ export default function TestimonialsSection() {
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-lg bg-lime-500 hover:bg-lime-400 text-black text-xs font-mono font-semibold transition"
+                  disabled={loading}
+                  className="px-5 py-2 rounded-lg bg-lime-500 hover:bg-lime-400 disabled:opacity-60 text-black text-xs font-mono font-semibold transition"
                 >
-                  Kirim Testimoni
+                  {loading ? 'Menyimpan...' : 'Kirim Testimoni'}
                 </button>
               </div>
             </form>
