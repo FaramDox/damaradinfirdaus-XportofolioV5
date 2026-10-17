@@ -1,12 +1,12 @@
 # Damar Adin Firdaus — Software Engineer Portfolio V5
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/placeholder/deploy-status)](https://portofolio-damaradinfirdaus.netlify.app/)
+[![Vercel Status](https://img.shields.io/badge/vercel-deployed-brightgreen?logo=vercel)](https://portofolio-damaradinfirdaus.vercel.app/)
 
 Portofolio resmi versi 5 milik **Damar Adin Firdaus**, seorang *Software Engineer* dan *Full-Stack Web Developer*. Proyek ini menampilkan keahlian dalam pengembangan aplikasi web performa tinggi, arsitektur database, dan desain antarmuka modern.
 
 ## 🌐 Demo
 
-**Live Preview**: [https://portofolio-damaradinfirdaus.netlify.app/](https://portofolio-damaradinfirdaus.netlify.app/)
+**Live Preview**: [https://portofolio-damaradinfirdaus.vercel.app/](https://portofolio-damaradinfirdaus.vercel.app/)
 
 ## 🚀 Fitur Utama
 
@@ -14,6 +14,7 @@ Portofolio resmi versi 5 milik **Damar Adin Firdaus**, seorang *Software Enginee
 - **Interactive Components**: Animasi halus menggunakan `framer-motion`.
 - **Dynamic Projects**: Showcase proyek-proyek unggulan dari pengembangan web hingga infrastruktur jaringan.
 - **Typewriter & Code Simulation**: Efek interaktif pada bagian Hero untuk kesan teknologi yang mendalam.
+- **Contact Form**: Form kontak fungsional menggunakan EmailJS — pesan langsung masuk ke email tanpa backend.
 - **Optimized Performance**: Dibangun di atas Vite untuk *build time* yang sangat cepat.
 
 ## 🛠️ Tech Stack
@@ -22,7 +23,8 @@ Portofolio resmi versi 5 milik **Damar Adin Firdaus**, seorang *Software Enginee
 - **Build Tool**: [Vite](https://vitejs.dev/)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Deployment**: [Netlify](https://www.netlify.com/)
+- **Email**: [EmailJS](https://www.emailjs.com/)
+- **Deployment**: [Vercel](https://vercel.com/)
 
 ## 📂 Struktur Proyek
 
@@ -40,7 +42,7 @@ src/
 │   ├── ProjectsSection.jsx     # Showcase proyek unggulan
 │   ├── CertificatesSection.jsx # Sertifikasi & penghargaan
 │   ├── TestimonialsSection.jsx # Testimoni / rekomendasi
-│   ├── ContactSection.jsx      # Form & info kontak
+│   ├── ContactSection.jsx      # Form & info kontak (EmailJS)
 │   ├── Footer.jsx              # Footer halaman
 │   ├── AnimatedBackground.jsx  # Efek latar animasi
 │   ├── LeftSocialRail.jsx      # Panel sosial media kiri
@@ -101,6 +103,7 @@ main.jsx
 
 - **Email**: [mradinfirdaus@gmail.com](mailto:mradinfirdaus@gmail.com)
 - **LinkedIn**: [damaradinfirdaus](https://www.linkedin.com/in/damaradinfirdaus)
+- **Instagram**: [@faramdox.dev](https://instagram.com/faramdox.dev)
 - **GitHub**: [FaramDox](https://github.com/FaramDox)
 
 ---
